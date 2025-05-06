@@ -29,6 +29,7 @@ type UrlCardProps = {
 export default function UrlCard({url}: UrlCardProps) {
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? window.location.origin;
     const [copiedId, setCopiedId] = useState<string | null>(null);
+    const siteIcon = `https://icons.duckduckgo.com/ip3/${cleanUrl(url.originalUrl)}.ico`
 
     const handleCopy = async (nanoCode: string) => {
         const fullUrl = `${baseUrl}/${nanoCode}`;
@@ -57,8 +58,8 @@ export default function UrlCard({url}: UrlCardProps) {
         >
             <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3 flex-grow">
-                    <div className="flex-none rounded-full border border-gray-200 bg-gradient-to-t from-gray-100 p-1">
-                        <Image src="https://avatar.vercel.sh/rauchg" width={40} height={40} alt="URL icon"
+                    <div className="flex-none rounded-full border border-gray-200 bg-gradient-to-t from-gray-100 p-1.5">
+                        <Image src={siteIcon} width={36} height={36} alt={cleanUrl(url.originalUrl)}
                                className="rounded-full"/>
                     </div>
                     <div className="flex flex-col gap-1">
