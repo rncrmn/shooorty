@@ -4,14 +4,12 @@ const nextConfig: NextConfig = {
   /* config options here */
     images: {
         remotePatterns: [
-            new URL('https://avatar.vercel.sh/**'),
             {
                 protocol: 'https',
-                hostname: 'icons.duckduckgo.com',
+                hostname: 'www.google.com',
                 port: '',
-                pathname: '/ip3/**',
-                search: '',
-            }
+                pathname: '/s2/**',
+            },
         ],
     },
 };
